@@ -70,9 +70,9 @@ class Sketch extends Component {
       // else, set sketchJSX to display sketch
       sketchJSX = (
         <div>
-          <p>{sketch.description}</p>
-          <p>{sketch.composer}</p>
-          <p>{sketch.music}</p>
+          <p>Description: {sketch.description}</p>
+          <p>Composer: {sketch.composer}</p>
+          <p>Music: {sketch.music}</p>
           <button onClick={this.delete}>Delete sketch</button>
           <Link to={`/update-sketch/${this.props.match.params.id}`}>
             <button>Update sketch</button>

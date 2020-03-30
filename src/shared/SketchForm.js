@@ -2,6 +2,13 @@ import React from 'react'
 
 const SketchForm = ({ sketch, handleSubmit, handleChange }) => (
   <form onSubmit={handleSubmit}>
+    <label>Description</label>
+    <input
+      placeholder="Put description here"
+      name="description"
+      value={sketch.description || ''}
+      onChange={handleChange}
+    /><br></br>
     <label>Composer</label>
     <input
       placeholder="Put composer here"
@@ -14,13 +21,6 @@ const SketchForm = ({ sketch, handleSubmit, handleChange }) => (
       placeholder="Put music here"
       name="music"
       value={sketch.music || ''}
-      onChange={handleChange}
-    /><br></br>
-    <label>Description</label>
-    <input
-      placeholder="Put description here"
-      name="description"
-      value={sketch.description || ''}
       onChange={handleChange}
     /><br></br>
     <button type="submit">Submit</button>

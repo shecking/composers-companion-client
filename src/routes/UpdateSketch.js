@@ -42,9 +42,11 @@ class SketchEdit extends Component {
     axios({
       method: 'patch',
       url: `${apiUrl}/sketches/${this.props.match.params.id}`,
-      data: { sketch: this.state.sketch },
       headers: {
         'Authorization': `Token token=${this.props.user.token}`
+      },
+      data: {
+        sketch: this.state.sketch
       }
     })
       .then(() => {
