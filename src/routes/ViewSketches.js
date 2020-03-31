@@ -35,17 +35,6 @@ class Sketches extends Component {
       .catch(console.error)
   }
 
-  // insert Async/Await from react-crud solution branch
-  //
-  // async componentDidMount () {
-  //   try {
-  // this.setState({ sketches: resposne.data.sketches })
-  // } catch {
-
-  // }
-  //   }
-  // }
-
   render () {
     // Destructure sketches from state
     const { sketches } = this.state

@@ -7,6 +7,7 @@ import Header from '../Header/Header'
 import SignUp from '../SignUp/SignUp'
 import SignIn from '../SignIn/SignIn'
 import SignOut from '../SignOut/SignOut'
+import HomePage from '../../routes/HomePage'
 import ChangePassword from '../ChangePassword/ChangePassword'
 import CreateSketch from '../../routes/CreateSketch'
 import ViewSketches from '../../routes/ViewSketches'
@@ -46,6 +47,9 @@ class App extends Component {
           />
         ))}
         <main className="container">
+          <Route exact path='/home' render={() => (
+            <HomePage setUser={this.setUser} />
+          )} />
           <Route path='/sign-up' render={() => (
             <SignUp msgAlert={this.msgAlert} setUser={this.setUser} />
           )} />
