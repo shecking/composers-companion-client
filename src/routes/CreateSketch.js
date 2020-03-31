@@ -47,7 +47,6 @@ class CreateSketch extends Component {
       }
     })
       .then((response) => {
-        console.log(response)
         this.setState({ created: response.data.sketch.id })
       })
       .catch(console.error)
