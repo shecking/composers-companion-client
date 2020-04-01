@@ -11,14 +11,14 @@ class SketchTables extends Component {
         { example: ' ', input: 'none', output: 'no key signature' },
         { example: 'Meter', input: '3/4', output: '3/4 time' },
         { example: '  ', input: '2+3/8', output: '2+3/8 time' },
-        { example: 'Pitch Level', input: 'C\' | C | c | c\'', output: 'C3 | C4 (middle C) | C5 | C6' },
+        { example: 'Pitch Level', input: 'C,, | C, | C | c | c\' | c\'\'', output: 'C2 | C3 | C4 (middle C) | C5 | C6 | C7' },
         { example: 'Flats ( _ )', input: '_B | __B', output: 'Bb | Bbb' },
         { example: 'Sharps ( ^ )', input: '^B | ^^B', output: 'C# | Cx' },
         { example: 'Naturals ( = )', input: '=B', output: '(B natural)' },
-        { example: 'Rests ( z )', input: 'z | z2 ', output: 'full measure rest | 2 note lengths of rest' },
-        { example: 'Bar Lines ( | )', input: '|', output: 'bar line' }
+        { example: 'Rests ( z )', input: 'z | z2 ', output: 'full measure rest | 2 note lengths of rest' }
       ],
       extended_elements: [
+        { example: 'Bar Lines ( | )', input: '|', output: 'bar line' },
         { example: 'Ties ( - )', input: 'G-|G', output: 'Two G3 pitches, tied across bar line' },
         { example: 'Dynamics', input: '!p!C | !mp!C | !mf!C | !f!C', output: 'Middle C at p, mp, mf, f' }
       ]

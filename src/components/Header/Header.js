@@ -4,8 +4,8 @@ import Navbar from 'react-bootstrap/Navbar'
 
 const authenticatedOptions = (
   <Fragment>
-    <Nav.Link href="#sketches">View All</Nav.Link>
-    <Nav.Link href="#create-sketch">Create</Nav.Link>
+    <Nav.Link href="#sketches">My Sketches</Nav.Link>
+    <Nav.Link href="#create-sketch">New Sketch</Nav.Link>
     <Nav.Link href="#change-password">Change Password</Nav.Link>
     <Nav.Link href="#sign-out">Sign Out</Nav.Link>
   </Fragment>

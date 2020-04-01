@@ -63,7 +63,7 @@ class CreateSketch extends Component {
     //
     const { sketch, created } = this.state
     if (created) {
-      return <Redirect to={'/sketches'}/>
+      return <Redirect to={`/sketches/${this.state.created}`}/>
     }
     //
     return (

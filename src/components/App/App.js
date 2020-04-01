@@ -60,19 +60,19 @@ class App extends Component {
             <SignOut msgAlert={this.msgAlert} clearUser={this.clearUser} user={user} />
           )} />
           <AuthenticatedRoute user={user} exact path='/change-password' render={() => (
-            <ChangePassword msgAlert={this.msgAlert} user={user} />
+            <ChangePassword msgAlert={this.msgAlert} user={user}/>
           )} />
-          <AuthenticatedRoute user={user} exact path='/create-sketch' render={({ match }) => (
-            <CreateSketch user={user} />
+          <AuthenticatedRoute user={user} exact path='/create-sketch' render={() => (
+            <CreateSketch msgAlert={this.msgAlert} user={user}/>
           )} />
           <AuthenticatedRoute user={user} exact path='/sketches' render={({ match }) => (
-            <ViewSketches user={user} />
+            <ViewSketches user={user} match={match}/>
           )} />
           <AuthenticatedRoute user={user} exact path='/sketches/:id' render={({ match }) => (
             <ShowSketch user={user} match={match}/>
           )} />
           <AuthenticatedRoute user={user} exact path='/update-sketch/:id' render={({ match }) => (
-            <UpdateSketch user={user} match={match}/>
+            <UpdateSketch msgAlert={this.msgAlert} user={user} match={match}/>
           )} />
         </main>
       </Fragment>
