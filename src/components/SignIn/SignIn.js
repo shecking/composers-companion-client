@@ -33,11 +33,10 @@ class SignIn extends Component {
         message: messages.signInSuccess,
         variant: 'success'
       }))
-      .then(() => history.push('/home'))
+      .then(() => history.push('/'))
       .catch(error => {
-        this.setState({ email: '', password: '' })
         msgAlert({
-          heading: 'Sign In Failed with error: ' + error.message,
+          heading: error.message,
           message: messages.signInFailure,
           variant: 'danger'
         })

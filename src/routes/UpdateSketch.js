@@ -11,12 +11,13 @@ import SketchTables from '../shared/SketchTable'
 class SketchEdit extends Component {
   constructor () {
     super()
-
     this.state = {
       sketch: {
         description: '',
         composer: '',
-        clef: '',
+        clef: {
+          selectedClefOption: 'treble'
+        },
         key: '',
         meter: '',
         tempo: '',
@@ -42,6 +43,35 @@ class SketchEdit extends Component {
       .catch(console.error)
   }
 
+  handleChange = (event) => {
+    const updatedField = {
+      [event.target.name]: event.target.value
+    }
+    const editedSketch = Object.assign(this.state.sketch, updatedField)
+    this.setState({ sketch: editedSketch })
+  }
+  //
+  // handleOptionChange = (event) => {
+  //   this.setState({ sketch: { clef: { selectedClefOption: event.target.value } } })
+  // }
+  handleOptionChange = (event) => {
+    const updatedOption = {
+      [event.target.name]: {
+        selectedClefOption: event.target.value
+      }
+    }
+    const editedOption = Object.assign(this.state.sketch, updatedOption)
+    this.setState(prevState => ({
+      sketch: {
+        ...prevState.sketch,
+        clef: {
+          ...prevState.sketch.clef,
+          editedOption
+        }
+      }
+    }))
+  }
+  //
   handleSubmit = (event) => {
     event.preventDefault()
 
@@ -61,17 +91,6 @@ class SketchEdit extends Component {
       .catch(console.error)
   }
 
-  handleChange = (event) => {
-    // 1. Create a new object with key of 'name' property on input, value with 'value' property
-    const updatedField = {
-      [event.target.name]: event.target.value
-    }
-    // 2. Combine the current `sketch` with updatedField
-    const editedSketch = Object.assign(this.state.sketch, updatedField)
-    // 3. Set the state
-    this.setState({ sketch: editedSketch })
-  }
-
   render () {
     // destructure from states
     // For example, use this so value can be
@@ -83,11 +102,12 @@ class SketchEdit extends Component {
     }
     return (
       <div>
-        <h1>Sketch Edit page</h1>
+        <h1>Edit Sketch</h1>
         <SketchForm
           sketch={sketch}
           handleSubmit={this.handleSubmit}
           handleChange={this.handleChange}
+          handleOptionChange={this.handleOptionChange}
         />
         <br></br>
         <SketchTables/>

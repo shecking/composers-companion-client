@@ -47,7 +47,7 @@ class App extends Component {
           />
         ))}
         <main className="container">
-          <Route exact path='/home' render={() => (
+          <Route exact path='/' render={() => (
             <HomePage />
           )} />
           <Route path='/sign-up' render={() => (

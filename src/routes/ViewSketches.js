@@ -17,8 +17,6 @@ class Sketches extends Component {
   }
 
   componentDidMount () {
-    // Run once when the component mounts
-    // API request lives here
     axios({
       method: 'get',
       url: `${apiUrl}/sketches`,
@@ -26,26 +24,20 @@ class Sketches extends Component {
         'Authorization': `Token token=${this.props.user.token}`
       }
     })
-
       .then(res => {
-        console.log(res)
-        // creating an array of all sketches
-        this.setState({ sketches: res.data.sketches })
+        this.setState({ sketches:
+          res.data.sketches })
       })
       .catch(console.error)
   }
 
   render () {
-    // Destructure sketches from state
     const { sketches } = this.state
     let sketchJSX
-    // 3 states:
-    // 1. if sketches is null, we are loading
     if (!sketches) {
       sketchJSX = <img src='https://media.giphy.com/media/3oEjI6SIIHBdRxXI40/giphy.gif'/>
-      // 2. If sketches array is empty, we have no sketches to show
     } else if (sketches.length === 0) {
-      sketchJSX = 'No sketches yet, go make one'
+      sketchJSX = 'You don\'t have any sketches.\nClick \'New Sketch\' above to get started.'
     } else {
       const sketchesList = sketches.map(sketch => (
         <li key={sketch.id}>

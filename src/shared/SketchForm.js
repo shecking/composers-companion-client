@@ -1,34 +1,58 @@
 import React from 'react'
 import '../index.scss'
 
-const SketchForm = ({ sketch, handleSubmit, handleChange }) => (
-  <div>
+const SketchForm = ({ sketch, handleSubmit, handleChange, handleOptionChange }) => (
+  <div className='full-input-form'>
     <form onSubmit={handleSubmit}>
-      <label>Description: </label>
-      <input
-        placeholder="Put description here"
-        name="description"
-        value={sketch.description || ''}
-        onChange={handleChange}
-      />
+      <div className='description-form'>
+        <h5>Description: </h5>
+        <input
+          required={true}
+          placeholder="Put description here"
+          name="description"
+          value={sketch.description || ''}
+          onChange={handleChange}
+        />
+      </div>
       <br></br>
-      <label>Composer: </label>
-      <input
-        placeholder="Put composer here"
-        name="composer"
-        value={sketch.composer || ''}
-        onChange={handleChange}
-      />
+
+      <div className='composer-form'>
+        <h5>Composer: </h5>
+        <input
+          placeholder="Put composer here"
+          name="composer"
+          value={sketch.composer || ''}
+          onChange={handleChange}
+        />
+      </div>
       <br></br>
-      <h6>Music: </h6>
-      <label>Clef (V):</label>
-      <input
-        placeholder="treble"
-        name="clef"
-        value={sketch.clef || ''}
-        onChange={handleChange}
-      />
-      <br></br>
+
+      <div className='clef-form'>
+        <h5>Music: </h5>
+        <label>Clef: </label>
+        <label>
+          <input
+            type="radio"
+            name="clef"
+            value="treble"
+            checked={sketch.clef.selectedClefOption === 'treble'}
+            onChange={handleOptionChange}
+            className='clef-radio-input'
+          />
+          Treble
+        </label>
+        <label>
+          <input
+            type="radio"
+            name="clef"
+            value="bass"
+            checked={sketch.clef.selectedClefOption === 'bass'}
+            onChange={handleOptionChange}
+            className='clef-radio-input'
+          />
+          Bass
+        </label>
+      </div>
       <label>Key (K):</label>
       <input
         placeholder="F | Dm | Eb | C#m"
@@ -64,6 +88,7 @@ const SketchForm = ({ sketch, handleSubmit, handleChange }) => (
       <p>Music Notes: </p>
       <textarea
         className='music-note-input'
+        required={true}
         placeholder="CCGG | AAG2"
         name="notes"
         value={sketch.notes}

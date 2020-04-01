@@ -68,8 +68,6 @@ class Sketch extends Component {
     } else if (deleted) {
       sketchJSX = <Redirect to='/sketches'/>
     } else {
-      // else, set sketchJSX to display sketch
-
       sketchJSX = (
         <div>
           <p>Description: {sketch.description}</p>
@@ -77,7 +75,7 @@ class Sketch extends Component {
           <p>Music: </p>
           <Abcjs
             abcNotation={
-              `K:${sketch.key} clef=${sketch.clef}\nM:${sketch.meter}\nQ:${sketch.tempo}\nL:${sketch.length}\n${sketch.notes}`
+              `K:${sketch.key} clef=${sketch.clef.selectedClefOption}\nM:${sketch.meter}\nQ:${sketch.tempo}\nL:${sketch.length}\n${sketch.notes}`
             }
             parserParams={{}}
             engraverParams={{ responsive: 'resize' }}
