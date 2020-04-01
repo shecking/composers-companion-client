@@ -1,6 +1,7 @@
 let apiUrl
 const apiUrls = {
   production: 'https://aqueous-earth-22729.herokuapp.com',
+  // old production URL: https://aqueous-atoll-85096.herokuapp.com
   development: 'http://localhost:4741'
 }
 
