@@ -77,7 +77,7 @@ class Sketch extends Component {
           <p>Music: </p>
           <Abcjs
             abcNotation={
-              `K:${sketch.key}\nM:${sketch.meter}\nQ:${sketch.tempo}\nL:${sketch.length}\n${sketch.notes}`
+              `K:${sketch.key} clef=${sketch.clef}\nM:${sketch.meter}\nQ:${sketch.tempo}\nL:${sketch.length}\n${sketch.notes}`
             }
             parserParams={{}}
             engraverParams={{ responsive: 'resize' }}
