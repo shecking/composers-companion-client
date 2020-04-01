@@ -6,6 +6,7 @@ import axios from 'axios'
 import apiUrl from '../apiConfig'
 
 import SketchForm from '../shared/SketchForm'
+import SketchTables from '../shared/SketchTable'
 
 class SketchEdit extends Component {
   constructor () {
@@ -13,9 +14,14 @@ class SketchEdit extends Component {
 
     this.state = {
       sketch: {
+        description: '',
         composer: '',
-        music: '',
-        description: ''
+        clef: '',
+        key: '',
+        meter: '',
+        tempo: '',
+        length: '',
+        notes: ''
       },
       updated: false
     }
@@ -83,6 +89,8 @@ class SketchEdit extends Component {
           handleSubmit={this.handleSubmit}
           handleChange={this.handleChange}
         />
+        <br></br>
+        <SketchTables/>
       </div>
     )
   }

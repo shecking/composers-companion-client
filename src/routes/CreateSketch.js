@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { Redirect } from 'react-router-dom'
+import '../index.scss'
 
 // import Axios
 import axios from 'axios'
@@ -7,6 +8,7 @@ import axios from 'axios'
 import apiUrl from '../apiConfig'
 
 import SketchForm from '../shared/SketchForm'
+import SketchTables from '../shared/SketchTable'
 
 class CreateSketch extends Component {
   constructor () {
@@ -14,9 +16,14 @@ class CreateSketch extends Component {
 
     this.state = {
       sketch: {
+        description: '',
         composer: '',
-        music: '',
-        description: ''
+        clef: '',
+        key: '',
+        meter: '',
+        tempo: '',
+        length: '',
+        notes: ''
       },
       created: null
     }
@@ -56,7 +63,7 @@ class CreateSketch extends Component {
     //
     const { sketch, created } = this.state
     if (created) {
-      return <Redirect to={`/sketch/${this.props.match.params.id}`}/>
+      return <Redirect to={'/sketches'}/>
     }
     //
     return (
@@ -67,6 +74,8 @@ class CreateSketch extends Component {
           handleSubmit={this.handleSubmit}
           handleChange={this.handleChange}
         />
+        <br></br>
+        <SketchTables/>
       </div>
     )
   }
