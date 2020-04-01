@@ -74,16 +74,15 @@ class Sketch extends Component {
         <div>
           <p>Description: {sketch.description}</p>
           <p>Composer: {sketch.composer}</p>
-          <p>Music:
-            <Abcjs
-              abcNotation={
-                `K:${sketch.key}\nM:${sketch.meter}\nQ:${sketch.tempo}\nL:${sketch.length}\n${sketch.notes}`
-              }
-              parserParams={{}}
-              engraverParams={{ responsive: 'resize' }}
-              renderParams={{ viewportHorizontal: true }}
-            />
-          </p>
+          <p>Music: </p>
+          <Abcjs
+            abcNotation={
+              `K:${sketch.key}\nM:${sketch.meter}\nQ:${sketch.tempo}\nL:${sketch.length}\n${sketch.notes}`
+            }
+            parserParams={{}}
+            engraverParams={{ responsive: 'resize' }}
+            renderParams={{ viewportHorizontal: true }}
+          />
           <button onClick={this.delete}>Delete sketch</button>
           <Link to={`/update-sketch/${this.props.match.params.id}`}>
             <button>Update sketch</button>
