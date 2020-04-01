@@ -62,7 +62,7 @@ const SketchForm = ({ sketch, handleSubmit, handleChange }) => (
       />
       <br></br>
       <p>Music Notes: </p>
-      <input
+      <textarea
         className='music-note-input'
         placeholder="CCGG | AAG2"
         name="notes"

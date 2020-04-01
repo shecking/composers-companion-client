@@ -13,6 +13,7 @@ class SketchTables extends Component {
         { example: 'Pitch Level', input: 'C\' | C | c | c\'', output: 'C3 | C4 (middle C) | C5 | C6' },
         { example: 'Flats ( _ )', input: '_B | __B', output: 'Bb | Bbb' },
         { example: 'Sharps ( ^ )', input: '^B | ^^B', output: 'C# | Cx' },
+        { example: 'Naturals ( = )', input: '=B', output: '(B natural)' },
         { example: 'Rests ( z )', input: 'z | z2 ', output: 'full measure rest | 2 note lengths of rest' },
         { example: 'Bar Lines ( | )', input: '|', output: 'bar line' }
       ],
