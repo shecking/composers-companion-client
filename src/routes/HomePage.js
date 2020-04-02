@@ -20,7 +20,7 @@ class HomePage extends Component {
         <h1>Home Page</h1>
         <Abcjs
           abcNotation={
-            'X:1\nM:4/4\nK:G clef=alto\n|:Gccc dedB|dedB dedB|c2ec B2dB|c2A2 A2BA|'
+            'L:1/16\nM:4/4\nK:Ab clef=treble\n!f!EFGE|:c3c- c2B2-B4 EFGE|B3B- B2A2- AGF2-F4 DEFE|\nA4 B2G2- GFE2- E2E2| B4 A4 z4 EFGE:|'
           }
           parserParams={{}}
           engraverParams={{ responsive: 'resize' }}
