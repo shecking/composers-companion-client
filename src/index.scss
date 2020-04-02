@@ -5,27 +5,40 @@
 // }
 $background-color: #000;
 $light-color: #fff;
-$solid-color: #ddd;
+$table-solid-color: #ddd;
+
+a {
+  display: block;
+  padding: 20px 20px 0;
+}
 
 .basic-elements,
 .extended-elements {
-  border: 3px solid $solid-color;
+  border: 3px solid $table-solid-color;
   border-collapse: collapse;
   font-family: 'Trebuchet MS', Arial, Helvetica, sans-serif;
   text-align: center;
   width: 75%;
 
   td {
-    border: 1px solid $solid-color;
+    border: 1px solid $table-solid-color;
     padding: 8px;
   }
 
   th {
     background-color: $background-color;
-    border: 1px solid $solid-color;
+    border: 1px solid $table-solid-color;
     color: $light-color;
     padding: 8px;
     text-align: center;
+  }
+}
+
+input {
+
+  ::placeholder {
+    text-align: right;
+    vertical-align: top;
   }
 }
 
@@ -35,12 +48,4 @@ $solid-color: #ddd;
   margin: auto;
   position: relative;
   width: 75%;
-}
-
-input {
-
-  ::placeholder {
-    text-align: right;
-    vertical-align: top;
-  }
 }

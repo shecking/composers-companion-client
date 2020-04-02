@@ -1,10 +1,9 @@
 import React, { Component } from 'react'
 import { Link, Redirect } from 'react-router-dom'
 import Abcjs from 'react-abcjs'
+import messages from '../components/AutoDismissAlert/messages'
 
-// Import Axios
 import axios from 'axios'
-// Import apiUrl
 import apiUrl from '../apiConfig'
 
 class Sketch extends Component {
@@ -17,11 +16,6 @@ class Sketch extends Component {
     }
   }
   componentDidMount () {
-    // Run once when the component mounts
-    // API request lives here
-    //
-    // see Components in Dev Tools, props attributes
-    // specifically, the match object containing params, containing id
     axios({
       method: 'get',
       url: `${apiUrl}/sketches/${this.props.match.params.id}`,
@@ -30,7 +24,6 @@ class Sketch extends Component {
       }
     })
       .then(res => {
-        // creating an array of all sketches
         this.setState({
           sketch: res.data.sketch
         })
@@ -39,6 +32,8 @@ class Sketch extends Component {
   }
 
   delete = (event) => {
+    const { msgAlert } = this.props
+
     axios({
       method: 'delete',
       url: `${apiUrl}/sketches/${this.props.match.params.id}`,
@@ -46,9 +41,21 @@ class Sketch extends Component {
         'Authorization': `Token token=${this.props.user.token}`
       }
     })
-      .then(() => {
+      .then((response) => {
         this.setState({
           deleted: true
+        })
+      })
+      .then(() => msgAlert({
+        heading: 'Sketch was successfully deleted',
+        message: messages.deleteSketchSuccess,
+        variant: 'success'
+      }))
+      .catch(error => {
+        msgAlert({
+          heading: error.message,
+          message: messages.deleteSketchFailure,
+          variant: 'danger'
         })
       })
       .catch(console.error)

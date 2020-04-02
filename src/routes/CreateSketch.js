@@ -3,9 +3,7 @@ import { Redirect } from 'react-router-dom'
 import '../index.scss'
 import messages from '../components/AutoDismissAlert/messages'
 
-// import Axios
 import axios from 'axios'
-// import apiUrl
 import apiUrl from '../apiConfig'
 
 import SketchForm from '../shared/SketchForm'
@@ -39,12 +37,7 @@ class CreateSketch extends Component {
     const editedSketch = Object.assign(this.state.sketch, createdField)
     this.setState({ sketch: editedSketch })
   }
-  //
-  //
-  // handleOptionChange = (event) => {
-  //   this.setState({ sketch: { clef: { selectedClefOption: event.target.value } } })
-  // }
-  //
+
   handleOptionChange = (event) => {
     const updatedOption = {
       [event.target.name]: {

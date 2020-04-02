@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import { Redirect } from 'react-router-dom'
-// import Axios
+import messages from '../components/AutoDismissAlert/messages'
+
 import axios from 'axios'
-// import apiUrl
 import apiUrl from '../apiConfig'
 
 import SketchForm from '../shared/SketchForm'
@@ -75,6 +75,8 @@ class SketchEdit extends Component {
   handleSubmit = (event) => {
     event.preventDefault()
 
+    const { msgAlert } = this.props
+
     axios({
       method: 'patch',
       url: `${apiUrl}/sketches/${this.props.match.params.id}`,
@@ -88,16 +90,23 @@ class SketchEdit extends Component {
       .then(() => {
         this.setState({ updated: true })
       })
-      .catch(console.error)
+      .then(() => msgAlert({
+        heading: 'Your sketch has been updated.',
+        message: messages.updateSketchSuccess,
+        variant: 'success'
+      }))
+      .catch(error => {
+        msgAlert({
+          heading: error.message,
+          message: messages.updateSketchFailure,
+          variant: 'danger'
+        })
+      })
   }
 
   render () {
-    // destructure from states
-    // For example, use this so value can be
-    // sketch.title, instead of this.state.sketch.title
     const { sketch, updated } = this.state
     if (updated) {
-      // Redirect to the show page (import Redirect)
       return <Redirect to={`/sketches/${this.props.match.params.id}`}/>
     }
     return (
