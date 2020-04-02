@@ -33,10 +33,13 @@ class Sketches extends Component {
     const { sketches } = this.state
     let sketchJSX
     if (!sketches) {
-      sketchJSX = <img src='https://media.giphy.com/media/3oEjI6SIIHBdRxXI40/giphy.gif'/>
+      sketchJSX = (
+        <img src='https://media.giphy.com/media/3oEjI6SIIHBdRxXI40/giphy.gif'/>
+      )
     } else if (sketches.length === 0) {
-      sketchJSX =
-      <h3>You don&apos;t have any sketches saved.\nClick New Sketch above to get started. </h3>
+      sketchJSX = (
+        <h3>You don&apos;t have any sketches saved. Click New Sketch above to get started. </h3>
+      )
     } else {
       const sketchesList = sketches.map(sketch => (
         <li key={sketch.id}>
