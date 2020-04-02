@@ -5,7 +5,6 @@ import { signIn } from '../../api/auth'
 import messages from '../AutoDismissAlert/messages'
 
 import Form from 'react-bootstrap/Form'
-import Button from 'react-bootstrap/Button'
 
 class SignIn extends Component {
   constructor () {
@@ -33,7 +32,7 @@ class SignIn extends Component {
         message: messages.signInSuccess,
         variant: 'success'
       }))
-      .then(() => history.push('/'))
+      .then(() => history.push('/sketches'))
       .catch(error => {
         msgAlert({
           heading: error.message,
@@ -48,7 +47,7 @@ class SignIn extends Component {
 
     return (
       <div className="row">
-        <div className="col-sm-10 col-md-8 mx-auto mt-5">
+        <div className="col-sm-10 col-md-8 mx-auto mt-5 form-label">
           <h3>Sign In</h3>
           <Form onSubmit={this.onSignIn}>
             <Form.Group controlId="email">
@@ -73,12 +72,7 @@ class SignIn extends Component {
                 onChange={this.handleChange}
               />
             </Form.Group>
-            <Button
-              variant="primary"
-              type="submit"
-            >
-              Submit
-            </Button>
+            <button className='sign-in-button' type='submit'>Submit</button>
           </Form>
         </div>
       </div>

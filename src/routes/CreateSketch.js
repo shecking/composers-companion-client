@@ -96,7 +96,7 @@ class CreateSketch extends Component {
     }
     //
     return (
-      <div>
+      <div className='create-sketch'>
         <h3>Create Sketch</h3>
         <SketchForm
           sketch={sketch}

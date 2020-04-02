@@ -1,23 +1,17 @@
 @import '~bootstrap/scss/bootstrap';
-// .music-note-input {
-//   cols: '40';
-//   rows: '4';
-// }
-$background-color: #000;
-$light-color: #fff;
-$table-solid-color: #ddd;
 
-a {
-  display: block;
-  padding: 20px 20px 0;
-}
+$element-background-color: #000;
+$element-light-color: #fff;
+$table-solid-color: #ddd;
+$styled-font: 'Shadows Into Light', cursive, Arial, sans-serif;
+$basic-font: 'Nanum Myeongjo', serif;
+$page-background-color: #f3e6ff;
 
 .basic-elements,
 .extended-elements {
   border: 3px solid $table-solid-color;
   border-collapse: collapse;
-  font-family: 'Trebuchet MS', Arial, Helvetica, sans-serif;
-  text-align: center;
+  font-family: $basic-font;
   width: 75%;
 
   td {
@@ -26,20 +20,67 @@ a {
   }
 
   th {
-    background-color: $background-color;
+    background-color: $element-background-color;
     border: 1px solid $table-solid-color;
-    color: $light-color;
+    color: $element-light-color;
     padding: 8px;
     text-align: center;
   }
 }
 
-input {
+body {
+  background-color: $page-background-color;
+}
 
-  ::placeholder {
-    text-align: right;
-    vertical-align: top;
-  }
+body,
+html {
+  height: 100%;
+}
+
+button {
+  background-color: $element-background-color;
+  border-radius: 8px;
+  color: $element-light-color;
+  font-family: $basic-font;
+  padding: 12px;
+}
+
+.form-label,
+input,
+textarea,
+.yt-link {
+  font-family: $basic-font;
+}
+
+.footer {
+  font-family: $styled-font;
+  font-size: 12px;
+}
+
+.footer-copyright {
+  color: $element-light-color;
+  display: inline;
+  font-family: $basic-font;
+}
+
+.header {
+  font-family: $styled-font;
+  font-size: 20px;
+}
+
+h1 {
+  font-family: $styled-font;
+  font-size: 54px;
+  text-align: center;
+}
+
+h3 {
+  font-family: $styled-font;
+  margin-top: 65px;
+}
+
+h5 {
+  font-family: $styled-font;
 }
 
 .music-note-input {
@@ -49,3 +90,15 @@ input {
   position: relative;
   width: 75%;
 }
+
+.sketch-single {
+  text-decoration: none;
+
+}
+
+.sketch-list {
+  font-family: $basic-font;
+  font-size: 24px;
+  list-style: none;
+  padding: 20px;
+ }

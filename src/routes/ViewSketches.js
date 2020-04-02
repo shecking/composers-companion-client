@@ -1,14 +1,12 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
+import '../index.scss'
 
-// Import Axios
 import axios from 'axios'
-// Import apiUrl
 import apiUrl from '../apiConfig'
 
 class Sketches extends Component {
   constructor () {
-    // Call the constructor on Component with super
     super()
 
     this.state = {
@@ -37,22 +35,23 @@ class Sketches extends Component {
     if (!sketches) {
       sketchJSX = <img src='https://media.giphy.com/media/3oEjI6SIIHBdRxXI40/giphy.gif'/>
     } else if (sketches.length === 0) {
-      sketchJSX = 'You don\'t have any sketches.\nClick \'New Sketch\' above to get started.'
+      sketchJSX =
+      <h3>You don&apos;t have any sketches saved.\nClick New Sketch above to get started. </h3>
     } else {
       const sketchesList = sketches.map(sketch => (
         <li key={sketch.id}>
-          <Link to={`/sketches/${sketch.id}`}>{sketch.description}</Link>
+          <Link className='sketch-single' to={`/sketches/${sketch.id}`}>{sketch.description}</Link>
         </li>
       ))
       sketchJSX = (
-        <ul>
+        <ul className='sketch-list'>
           {sketchesList}
         </ul>
       )
     }
     return (
-      <div>
-        <h1>My Sketches</h1>
+      <div className='view-sketches'>
+        <h3>My Sketches</h3>
         {sketchJSX}
       </div>
     )

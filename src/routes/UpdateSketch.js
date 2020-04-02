@@ -111,7 +111,7 @@ class SketchEdit extends Component {
     }
     return (
       <div>
-        <h1>Edit Sketch</h1>
+        <h3>Edit Sketch</h3>
         <SketchForm
           sketch={sketch}
           handleSubmit={this.handleSubmit}

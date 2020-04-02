@@ -77,9 +77,12 @@ class Sketch extends Component {
     } else {
       sketchJSX = (
         <div>
-          <p>Description: {sketch.description}</p>
-          <p>Composer: {sketch.composer}</p>
-          <p>Music: </p>
+          <h3>Sketch</h3>
+          <h6>Description: </h6>
+          <p>{sketch.description}</p>
+          <h6>Author: </h6>
+          <p>{sketch.composer}</p>
+          <h6>Music: </h6>
           <Abcjs
             abcNotation={
               `K:${sketch.key} clef=${sketch.clef.selectedClefOption}\nM:${sketch.meter}\nQ:${sketch.tempo}\nL:${sketch.length}\n${sketch.notes}`
@@ -88,9 +91,9 @@ class Sketch extends Component {
             engraverParams={{ responsive: 'resize' }}
             renderParams={{ viewportHorizontal: true }}
           />
-          <button onClick={this.delete}>Delete sketch</button>
+          <button className='delete-button' onClick={this.delete}>Delete this sketch</button>
           <Link to={`/update-sketch/${this.props.match.params.id}`}>
-            <button>Update sketch</button>
+            <button className='edit-button'>Edit this sketch</button>
           </Link>
         </div>
       )

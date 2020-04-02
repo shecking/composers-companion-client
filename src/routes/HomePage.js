@@ -2,23 +2,10 @@ import React, { Component } from 'react'
 import Abcjs from 'react-abcjs'
 import '../index.scss'
 
-// Import Axios
-// import axios from 'axios'
-// Import apiUrl
-// import apiUrl from '../apiConfig'
-
-class HomePage extends Component {
-  constructor () {
-    // Call the constructor on Component with super
-    super()
-
-    this.state = {}
-  }
-
-  render () {
-    return (
-      <div>
-        <a href='https://youtu.be/dQw4w9WgXcQ?t=43'>Click to listen</a>
+const homePageMusic = (
+  <div>
+    <div className='homepage'>
+      <h3>
         <Abcjs
           abcNotation={
             'L:1/16\nM:4/4\nK:Ab clef=treble\n!f!EFGE|c3c- c2B2-B4 EFGE|B3B- B2A2- AGF2-F4 DEFD\nA4 B2G2- GFE2- E2E2| B4 A4 z4 EFGE'
@@ -27,7 +14,26 @@ class HomePage extends Component {
           engraverParams={{ responsive: 'resize' }}
           renderParams={{ viewportHorizontal: true }}
         />
-      </div>
+      </h3>
+      <a className='yt-link' href='https://youtu.be/dQw4w9WgXcQ?t=43'>Click to listen</a>
+    </div>
+    <hr/>
+    <div>
+      <h1>Composer&apos;s Companion</h1>
+    </div>
+  </div>
+)
+
+class HomePage extends Component {
+  constructor () {
+    super()
+
+    this.state = {}
+  }
+
+  render () {
+    return (
+      homePageMusic
     )
   }
 }

@@ -1,6 +1,7 @@
 import React, { Fragment } from 'react'
 import Nav from 'react-bootstrap/Nav'
 import Navbar from 'react-bootstrap/Navbar'
+import '../../index.scss'
 
 const authenticatedOptions = (
   <Fragment>
@@ -25,16 +26,16 @@ const alwaysOptions = (
 )
 
 const Header = ({ user }) => (
-  <Navbar bg="primary" variant="dark" expand="md">
-    <Navbar.Brand href="#">
+  <Navbar fixed='top' bg="dark" variant="dark" expand="lg">
+    <Navbar.Brand className='header' href="#">
       Composer&apos;s Companion
     </Navbar.Brand>
     <Navbar.Toggle aria-controls="basic-navbar-nav" />
     <Navbar.Collapse id="basic-navbar-nav">
-      <Nav className="ml-auto">
-        { user && <span className="navbar-text mr-2">Logged in as {user.email}</span>}
+      <Nav className="ml-auto header">
         { alwaysOptions }
         { user ? authenticatedOptions : unauthenticatedOptions }
+        { user && <span className="navbar-text mr-2"> {user.email}</span>}
       </Nav>
     </Navbar.Collapse>
   </Navbar>
