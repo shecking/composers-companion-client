@@ -5,13 +5,19 @@ This application, Composer's Companion, is intended for musicians, composers, so
 ## Important Links:
 
 Link to the front-end application: <https://shecking.github.io/composers-companion-client/#/>
+
 Link to the front-end repo: <https://github.com/shecking/composers-companion-client>
+
 Link to the back-end server: <https://aqueous-earth-22729.herokuapp.com/>
+
 (note: this application's server is hosted by Heroku; HTTP 404 is expected at this link)
+
 Link to the back-end repo:<https://github.com/shecking/composers-companion-api>
 
 Link to react-abcjs on npm website: <https://www.npmjs.com/package/react-abcjs>
+
 Link to abcjs repo: <https://github.com/paulrosen/abcjs>
+
 Link to the ABC standard notation guide: <http://abcnotation.com/wiki/abc:standard>
 
 ## Setup and Install Instructions
@@ -43,19 +49,27 @@ As a user, I want to be able to sign up, sign in, and sign out of a personal acc
 As a user, I want to be able to change my password.
 
 ### Wireframes:
+
 <https://imgur.com/Hv1YIvJ>
+
 <https://imgur.com/sMXdGge>
 
 ### Screenshots:
 
 Home page:
+
 <https://imgur.com/AcakmFV>
+
 Creating sketch:
+
 <https://imgur.com/KEqk9LF>
+
 Created sketch:
+
 <https://imgur.com/cWpAhTP>
 
 ### Technologies Used:
+
 - HTML/CSS
 - JavaScript
 - Bootstrap
@@ -63,6 +77,7 @@ Created sketch:
 - DOM/API
 - GitHub/GitHub Pages
 - react-abcjs
+
   This React component uses the standard ABC notation system and abc2js to render musical elements in the browser.
 
 #### Unsolved Problems/Future Development:
