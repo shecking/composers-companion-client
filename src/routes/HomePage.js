@@ -27,7 +27,7 @@ const homePage = (
     <div>
       <p className='homepage-text'>
         Welcome to Composer&apos;s Companion, an application for composers,
-        conductors, performers, and musicians everywhere. This apps allows you to
+        songwriters, performers, and musicians everywhere. This apps allows you to
         create and store sketches of your musical ideas from any device, wherever you are and
         whenever you need.</p>
       <p className='homepage-text'>
