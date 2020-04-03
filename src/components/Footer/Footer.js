@@ -8,10 +8,11 @@ import '../../index.scss'
 // </Nav.Item>
 
 const footerItems = (
-  <div className=''>
-    <Nav.Item>
-      <Nav className='footer-copyright'>© Copyright Steven Hecking 2020</Nav>
-    </Nav.Item>
+  <div className='container'>
+    <div className='footer-items'>
+      <p className='footer-copyright'>© Copyright Steven Hecking 2020</p>
+      <a className='footer-link' href='https://github.com/shecking'>My GitHub</a>
+    </div>
   </div>
 )
 

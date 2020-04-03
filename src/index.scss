@@ -45,6 +45,20 @@ button {
   padding: 12px;
 }
 
+.footer {
+  font-family: $styled-font;
+  font-size: 12px;
+}
+
+.footer-copyright,
+.footer-link {
+  color: $element-light-color;
+  display: inline;
+  font-family: $basic-font;
+  padding: 0 10px;
+  text-decoration: none;
+}
+
 .form-label,
 input,
 textarea,
@@ -52,15 +66,26 @@ textarea,
   font-family: $basic-font;
 }
 
-.footer {
-  font-family: $styled-font;
-  font-size: 12px;
+h1 {
+  font-size: 54px;
+  font-weight: bold;
+  text-align: center;
 }
 
-.footer-copyright {
-  color: $element-light-color;
-  display: inline;
-  font-family: $basic-font;
+h2 {
+  text-align: center;
+}
+
+h3 {
+  font-size: 30px;
+  margin-top: 65px;
+}
+
+h1,
+h2,
+h3,
+h5 {
+  font-family: $styled-font;
 }
 
 .header {
@@ -68,19 +93,9 @@ textarea,
   font-size: 20px;
 }
 
-h1 {
-  font-family: $styled-font;
-  font-size: 54px;
-  text-align: center;
-}
-
-h3 {
-  font-family: $styled-font;
-  margin-top: 65px;
-}
-
-h5 {
-  font-family: $styled-font;
+.homepage-text {
+  font-family: $basic-font;
+  padding-top: 20px;
 }
 
 .music-note-input {
@@ -101,4 +116,8 @@ h5 {
   font-size: 24px;
   list-style: none;
   padding: 20px;
+ }
+
+.text-last {
+  padding-bottom: 30px;
  }
