@@ -46,6 +46,15 @@ As a user, I want to be able to change my password.
 <https://imgur.com/Hv1YIvJ>
 <https://imgur.com/sMXdGge>
 
+### Screenshots:
+
+Home page:
+<https://imgur.com/AcakmFV>
+Creating sketch:
+<https://imgur.com/KEqk9LF>
+Created sketch:
+<https://imgur.com/cWpAhTP>
+
 ### Technologies Used:
 - HTML/CSS
 - JavaScript
