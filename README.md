@@ -1,6 +1,6 @@
 # Composer's Companion: Application Description
 
-This application, Composer's Companion, is intended for musicians, composers, songwriters, and performers of all kinds. It provides a quick, lightweight way for users to log and access printed music ideas from a browser, and without the need for complex software. Composer's Companion was created using React and JavaScript (front-end) and Express (back-end).
+This application, Composer's Companion, is intended for musicians, composers, songwriters, and performers of all kinds. It provides a quick, lightweight way for users to log and access printed music ideas from a browser, and without the need for complex software. Composer's Companion was created using JavaScript, React (front-end), and Express (back-end).
 
 ## Important Links:
 
@@ -10,7 +10,7 @@ Link to the front-end repo: <https://github.com/shecking/composers-companion-cli
 
 Link to the back-end server: <https://aqueous-earth-22729.herokuapp.com/>
 
-(note: this application's server is hosted by Heroku; HTTP 404 is expected at this link)
+(note: this application's server is hosted by Heroku; failed HTTP GET request is expected at this link)
 
 Link to the back-end repo:<https://github.com/shecking/composers-companion-api>
 
@@ -22,11 +22,11 @@ Link to the ABC standard notation guide: <http://abcnotation.com/wiki/abc:standa
 
 ## Setup and Install Instructions
 
-- Fork and clone this repository and its back-end counterpart using Git/GitHub
-- Navigate to this client repository using command line
-- Run `npm install` to install dependencies
-- Run `npm install react-abcjs` (see 'Technologies Used' below for more information)
-- Run `npm start` to spin up a local copy in your browser
+-   Fork and clone this repository, and its back-end counterpart, using Git/GitHub
+-   Navigate to the new composers-companion-client folder using command line
+-   Run `npm install` to install dependencies
+-   Run `npm install react-abcjs` (see 'Technologies Used' below for more information)
+-   Run `npm start` to spin up a local copy in your browser
 
 ## Planning Story:
 
@@ -38,47 +38,47 @@ My personal problem-solving strategy consisted a variety of methods, including p
 
 ### User Stories:
 
-As a user, I want to create new sketches of music that only I can see.
-As a user, I want to be able to add music notes to a sketch.
-As a user, I want to be able to add time signatures and key signatures to a sketch.
-As a user, I want to view sketches I’ve already made.
-As a user, I want to edit existing sketches I own.
-As a user, I want to delete sketches I don’t want anymore.
-As a user, I want to attach written notes to the sketches I create.
-As a user, I want to be able to sign up, sign in, and sign out of a personal account.
-As a user, I want to be able to change my password.
+-   As a user, I want to create new sketches of music that only I can see.
+-   As a user, I want to be able to add music notes to a sketch.
+-   As a user, I want to be able to add time signatures and key signatures to a sketch.
+-   As a user, I want to view sketches I’ve already made.
+-   As a user, I want to edit existing sketches I own.
+-   As a user, I want to delete sketches I don’t want anymore.
+-   As a user, I want to attach written notes to the sketches I create.
+-   As a user, I want to be able to sign up, sign in, and sign out of a personal account.
+-   As a user, I want to be able to change my password.
 
 ### Wireframes:
 
-<https://imgur.com/Hv1YIvJ>
+![imgur](https://i.imgur.com/Hv1YIvJ.jpg "Wireframe 1")
 
-<https://imgur.com/sMXdGge>
+![imgur](https://i.imgur.com/sMXdGge.jpg "Wireframe 2")
 
 ### Screenshots:
 
 Home page:
 
-<https://imgur.com/AcakmFV>
+![imgur](https://i.imgur.com/AcakmFV.png "Home Page")
 
 Creating sketch:
 
-<https://imgur.com/KEqk9LF>
+![imgur](https://i.imgur.com/KEqk9LF.png "Create Sketch")
 
 Created sketch:
 
-<https://imgur.com/cWpAhTP>
+![Imgur](https://i.imgur.com/cWpAhTP.png "Created Sketch")
 
 ### Technologies Used:
 
-- HTML/CSS
-- JavaScript
-- Bootstrap
-- Axios
-- DOM/API
-- GitHub/GitHub Pages
-- react-abcjs
+-   HTML/CSS
+-   JavaScript
+-   Bootstrap
+-   Axios
+-   DOM/API
+-   GitHub/GitHub Pages
+-   react-abcjs
 
-  This React component uses the standard ABC notation system and abc2js to render musical elements in the browser.
+    This React component uses the standard ABC notation system and abc2js to render musical elements in the browser.
 
 #### Unsolved Problems/Future Development:
 
