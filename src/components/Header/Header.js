@@ -25,6 +25,9 @@ const alwaysOptions = (
   </Fragment>
 )
 
+// replace <Navbar {...} > with <Navbar collapseOnSelect {...}> to auto close menu on click
+// https://react-bootstrap.github.io/components/navbar/
+
 const Header = ({ user }) => (
   <Navbar fixed='top' bg="dark" variant="dark" expand="lg">
     <Navbar.Brand className='header' href="#">
