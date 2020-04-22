@@ -12,6 +12,7 @@ const footerItems = (
     <div className='footer-items'>
       <p className='footer-copyright'>© Copyright Steven Hecking 2020</p>
       <a className='footer-link' href='https://github.com/shecking'>My GitHub</a>
+      <a className='footer-link' href='https://www.linkedin.com/in/stevenhecking/'>My LinkedIn</a>
     </div>
   </div>
 )

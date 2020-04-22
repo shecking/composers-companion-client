@@ -77,10 +77,10 @@ class Sketch extends Component {
     } else {
       sketchJSX = (
         <div>
-          <h3>Sketch</h3>
+          <h3>My Sketch</h3>
           <h6>Description: </h6>
           <p>{sketch.description}</p>
-          <h6>Author: </h6>
+          <h6>Composer: </h6>
           <p>{sketch.composer}</p>
           <h6>Music: </h6>
           <Abcjs

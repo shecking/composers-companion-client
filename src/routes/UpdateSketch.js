@@ -50,10 +50,7 @@ class SketchEdit extends Component {
     const editedSketch = Object.assign(this.state.sketch, updatedField)
     this.setState({ sketch: editedSketch })
   }
-  //
-  // handleOptionChange = (event) => {
-  //   this.setState({ sketch: { clef: { selectedClefOption: event.target.value } } })
-  // }
+
   handleOptionChange = (event) => {
     const updatedOption = {
       [event.target.name]: {

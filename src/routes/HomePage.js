@@ -8,7 +8,7 @@ const homePage = (
       <h3>
         <Abcjs
           abcNotation={
-            'L:1/16\nM:4/4\nK:Ab clef=treble\n!f!FGAF|c3c- c2B2-B4 EFGE|B3B- B2A2- AGF2-F4 DEFD\nA4 B2G2- GFE2- E2E2| B4 A4 z4 EFGE'
+            'L:1/16\nM:4/4\nK:Ab clef=treble\n!f!FGAF|c3c- c2B2-B4 EFGE|B3B- B2A2- AGF2-F4 DEFD\nA4 B2G2- GFE2- E2E2| B4 A4 z4 FGAF'
           }
           parserParams={{}}
           engraverParams={{ responsive: 'resize' }}
