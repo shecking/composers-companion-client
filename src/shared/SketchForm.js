@@ -53,7 +53,7 @@ const SketchForm = ({ sketch, handleSubmit, handleChange, handleOptionChange }) 
           Bass
         </label>
       </div>
-      <label>Key (K):</label>
+      <label>Key: </label>
       <input
         placeholder="F | Dm | Eb | C#m"
         name="key"
@@ -61,7 +61,7 @@ const SketchForm = ({ sketch, handleSubmit, handleChange, handleOptionChange }) 
         onChange={handleChange}
       />
       <br></br>
-      <label>Meter (M):</label>
+      <label>Meter: </label>
       <input
         placeholder="4/4"
         name="meter"
@@ -69,7 +69,7 @@ const SketchForm = ({ sketch, handleSubmit, handleChange, handleOptionChange }) 
         onChange={handleChange}
       />
       <br></br>
-      <label>Tempo (Q):</label>
+      <label>Tempo: </label>
       <input
         placeholder="1/4=60"
         name="tempo"
@@ -77,7 +77,7 @@ const SketchForm = ({ sketch, handleSubmit, handleChange, handleOptionChange }) 
         onChange={handleChange}
       />
       <br></br>
-      <label>Note Length (L):</label>
+      <label>Note Length: </label>
       <input
         placeholder="1/4 | 1/8 | 1/2"
         name="length"
