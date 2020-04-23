@@ -34,7 +34,7 @@ class Sketches extends Component {
     let sketchJSX
     if (!sketches) {
       sketchJSX = (
-        <img src='https://media.giphy.com/media/3oEjI6SIIHBdRxXI40/giphy.gif'/>
+        <img src='https://media.giphy.com/media/xUOxf2Z6fLwKBTfGTK/source.gif'/>
       )
     } else if (sketches.length === 0) {
       sketchJSX = (
