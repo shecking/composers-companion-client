@@ -22,7 +22,9 @@ class CreateSketch extends Component {
         key: '',
         meter: '',
         tempo: '',
-        length: '',
+        length: {
+          selectedLengthOption: '1/4'
+        },
         notes: ''
       },
       created: null
@@ -41,7 +43,8 @@ class CreateSketch extends Component {
   handleOptionChange = (event) => {
     const updatedOption = {
       [event.target.name]: {
-        selectedClefOption: event.target.value
+        selectedClefOption: event.target.value,
+        selectedLengthOption: event.target.value
       }
     }
     const editedOption = Object.assign(this.state.sketch, updatedOption)
@@ -50,6 +53,10 @@ class CreateSketch extends Component {
         ...prevState.sketch,
         clef: {
           ...prevState.sketch.clef,
+          editedOption
+        },
+        length: {
+          ...prevState.sketch.length,
           editedOption
         }
       }

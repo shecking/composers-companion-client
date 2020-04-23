@@ -37,7 +37,7 @@ const SketchForm = ({ sketch, handleSubmit, handleChange, handleOptionChange }) 
             value="treble"
             checked={sketch.clef.selectedClefOption === 'treble'}
             onChange={handleOptionChange}
-            className='clef-radio-input'
+            className='clef-radio'
           />
           Treble
         </label>
@@ -48,7 +48,7 @@ const SketchForm = ({ sketch, handleSubmit, handleChange, handleOptionChange }) 
             value="bass"
             checked={sketch.clef.selectedClefOption === 'bass'}
             onChange={handleOptionChange}
-            className='clef-radio-input'
+            className='clef-radio'
           />
           Bass
         </label>
@@ -77,13 +77,51 @@ const SketchForm = ({ sketch, handleSubmit, handleChange, handleOptionChange }) 
         onChange={handleChange}
       />
       <br></br>
-      <label>Note Length: </label>
-      <input
-        placeholder="1/4 | 1/8 | 1/2"
-        name="length"
-        value={sketch.length || ''}
-        onChange={handleChange}
-      />
+      <label>Default Note Length: </label>
+      <label>
+        <input
+          type="radio"
+          name="length"
+          value="1/2"
+          checked={sketch.length.selectedLengthOption === '1/2'}
+          onChange={handleOptionChange}
+          className='length-radio'
+        />
+        Half Note
+      </label>
+      <label>
+        <input
+          type="radio"
+          name="length"
+          value="1/4"
+          checked={sketch.length.selectedLengthOption === '1/4'}
+          onChange={handleOptionChange}
+          className='length-radio'
+        />
+        Quarter Note
+      </label>
+      <label>
+        <input
+          type="radio"
+          name="length"
+          value="1/8"
+          checked={sketch.length.selectedLengthOption === '1/8'}
+          onChange={handleOptionChange}
+          className='length-radio'
+        />
+        Eighth Note
+      </label>
+      <label>
+        <input
+          type="radio"
+          name="length"
+          value="1/16"
+          checked={sketch.length.selectedLengthOption === '1/16'}
+          onChange={handleOptionChange}
+          className='length-radio'
+        />
+        Sixteenth Note
+      </label>
       <br></br>
       <p>Music Notes: </p>
       <textarea
@@ -94,6 +132,7 @@ const SketchForm = ({ sketch, handleSubmit, handleChange, handleOptionChange }) 
         value={sketch.notes}
         onChange={handleChange}
       />
+      <p>Use the table below to guide your sketch&apos;s notation.</p>
       <br></br>
       <button type="submit">Save my Sketch</button>
     </form>
