@@ -85,16 +85,16 @@ class Sketch extends Component {
           <h6>Music: </h6>
           <Abcjs
             abcNotation={
-              `K:${sketch.key} clef=${sketch.clef.selectedClefOption}\nM:${sketch.meter}\nQ:${sketch.tempo}\nL:${sketch.length}\n${sketch.notes}`
+              `K:${sketch.key} clef=${sketch.clef.selectedClefOption}\nM:${sketch.meter}\nQ:${sketch.tempo}\nL:${sketch.length.selectedLengthOption}\n${sketch.notes}`
             }
             parserParams={{}}
             engraverParams={{ responsive: 'resize' }}
             renderParams={{ viewportHorizontal: true }}
           />
-          <button className='delete-button' onClick={this.delete}>Delete this sketch</button>
           <Link to={`/update-sketch/${this.props.match.params.id}`}>
             <button className='edit-button'>Edit this sketch</button>
           </Link>
+          <button className='delete-button' onClick={this.delete}>Delete this sketch</button>
         </div>
       )
     }

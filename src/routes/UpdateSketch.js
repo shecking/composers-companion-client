@@ -15,9 +15,7 @@ class SketchEdit extends Component {
       sketch: {
         description: '',
         composer: '',
-        clef: {
-          selectedClefOption: 'treble'
-        },
+        clef: '',
         key: '',
         meter: '',
         tempo: '',
@@ -54,7 +52,8 @@ class SketchEdit extends Component {
   handleOptionChange = (event) => {
     const updatedOption = {
       [event.target.name]: {
-        selectedClefOption: event.target.value
+        selectedClefOption: event.target.value,
+        selectedLengthOption: event.target.value
       }
     }
     const editedOption = Object.assign(this.state.sketch, updatedOption)
@@ -63,6 +62,10 @@ class SketchEdit extends Component {
         ...prevState.sketch,
         clef: {
           ...prevState.sketch.clef,
+          editedOption
+        },
+        length: {
+          ...prevState.sketch.length,
           editedOption
         }
       }
