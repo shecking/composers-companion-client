@@ -69,7 +69,7 @@ const SketchForm = ({ sketch, handleSubmit, handleChange, handleOptionChange }) 
       <input
         placeholder="4/4"
         name="meter"
-        pattern="(?:[1-9]{1,2}|\'none\')\/(?:2|4|8|16)"
+        // pattern="(?:[1-9]{1,2}|\'none\')\/(?:2|4|8|16)"
         value={sketch.meter || ''}
         onChange={handleChange}
       />
