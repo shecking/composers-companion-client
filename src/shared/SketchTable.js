@@ -6,10 +6,11 @@ class SketchTables extends Component {
     this.state = {
       basic_elements: [
         { example: 'Key', input: 'F | Fm', output: 'F Major (1 flat) | F minor (4 flats)' },
-        { example: '', input: 'Eb | C#m', output: 'Eb Major (3 flats) | C# minor (3 sharps)' },
-        { example: ' ', input: 'none', output: 'no key signature' },
+        { example: 'Key (flats/sharps)', input: 'Eb | C#m', output: 'Eb Major (3 flats) | C# minor (3 sharps)' },
+        { example: 'No Key', input: '(none)', output: 'no key signature' },
         { example: 'Meter', input: '3/4', output: '3/4 time' },
-        { example: '  ', input: '2+3/8', output: '2+3/8 time' },
+        { example: 'Complex Meter', input: '2+3/8', output: '2+3/8 time' },
+        { example: 'No Meter', input: '(none)', output: 'no time signature' },
         { example: 'Pitch Level', input: 'C,, | C, | C | c | c\' | c\'\'', output: 'C2 | C3 | C4 (middle C) | C5 | C6 | C7' },
         { example: 'Flats (_)', input: '_B | __B', output: 'Bb | Bbb' },
         { example: 'Sharps (^)', input: '^B | ^^B', output: 'C# | Cx' },
