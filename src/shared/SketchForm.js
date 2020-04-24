@@ -37,7 +37,7 @@ const SketchForm = ({ sketch, handleSubmit, handleChange, handleOptionChange }) 
             value="treble"
             checked={sketch.clef.selectedClefOption === 'treble'}
             onChange={handleOptionChange}
-            className='clef-radio'
+            className='radio clef-radio'
           />
           Treble
         </label>
@@ -48,15 +48,19 @@ const SketchForm = ({ sketch, handleSubmit, handleChange, handleOptionChange }) 
             value="bass"
             checked={sketch.clef.selectedClefOption === 'bass'}
             onChange={handleOptionChange}
-            className='clef-radio'
+            className='radio clef-radio'
           />
           Bass
         </label>
       </div>
       <label>Key: </label>
       <input
-        placeholder="F | Dm | Eb | C#m"
+        placeholder="F | Fm | Eb | C#m"
+        // id="key"
         name="key"
+        // pattern="([A-G]{1})"
+        // pattern="([A-G]{1}|\'none\')(?:b|#|m)(?:m)"
+        // oninvalid="this.setCustomValidity('Not a valid key signature')"
         value={sketch.key || ''}
         onChange={handleChange}
       />
@@ -65,10 +69,12 @@ const SketchForm = ({ sketch, handleSubmit, handleChange, handleOptionChange }) 
       <input
         placeholder="4/4"
         name="meter"
+        pattern="(?:[1-9]{1,2}|\'none\')\/(?:2|4|8|16)"
         value={sketch.meter || ''}
         onChange={handleChange}
       />
       <br></br>
+      <p className='form-notes'>Currently supported time signatures: X/2, X/4, X/8, X/16</p>
       <label>Tempo: </label>
       <input
         placeholder="1/4=60"
@@ -85,7 +91,7 @@ const SketchForm = ({ sketch, handleSubmit, handleChange, handleOptionChange }) 
           value="1/2"
           checked={sketch.length.selectedLengthOption === '1/2'}
           onChange={handleOptionChange}
-          className='length-radio'
+          className='radio length-radio'
         />
         Half Note
       </label>
@@ -96,7 +102,7 @@ const SketchForm = ({ sketch, handleSubmit, handleChange, handleOptionChange }) 
           value="1/4"
           checked={sketch.length.selectedLengthOption === '1/4'}
           onChange={handleOptionChange}
-          className='length-radio'
+          className='radio length-radio'
         />
         Quarter Note
       </label>
@@ -107,7 +113,7 @@ const SketchForm = ({ sketch, handleSubmit, handleChange, handleOptionChange }) 
           value="1/8"
           checked={sketch.length.selectedLengthOption === '1/8'}
           onChange={handleOptionChange}
-          className='length-radio'
+          className='radio length-radio'
         />
         Eighth Note
       </label>
@@ -118,7 +124,7 @@ const SketchForm = ({ sketch, handleSubmit, handleChange, handleOptionChange }) 
           value="1/16"
           checked={sketch.length.selectedLengthOption === '1/16'}
           onChange={handleOptionChange}
-          className='length-radio'
+          className='radio length-radio'
         />
         Sixteenth Note
       </label>
@@ -132,7 +138,7 @@ const SketchForm = ({ sketch, handleSubmit, handleChange, handleOptionChange }) 
         value={sketch.notes}
         onChange={handleChange}
       />
-      <p>Use the table below to guide your sketch&apos;s notation.</p>
+      <p className='form-notes'>Use the table below to guide your sketch&apos;s notation.</p>
       <br></br>
       <button type="submit">Save my Sketch</button>
     </form>
