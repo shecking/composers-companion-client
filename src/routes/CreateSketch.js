@@ -117,5 +117,18 @@ class CreateSketch extends Component {
     )
   }
 }
+// The code below represents proof of concept (using 'name') for rendering user input immediately
+// This will be used to render a user's notation immediately when creating a new sketch
+// <div>
+//   <p>Updated name: {this.state.name} </p>
+//   <p>Change name:</p>
+//   <input
+//     type="text"
+//     onChange={event => {
+//       this.setState({
+//         name: event.target.value
+//       })
+//     }}/>
+// </div>
 
 export default CreateSketch
