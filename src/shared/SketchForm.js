@@ -1,5 +1,6 @@
 import React from 'react'
 import '../index.scss'
+import SketchPreview from './SketchPreview'
 
 const SketchForm = ({ sketch, handleSubmit, handleChange, handleOptionChange }) => (
   <div className='full-input-form'>
@@ -10,7 +11,7 @@ const SketchForm = ({ sketch, handleSubmit, handleChange, handleOptionChange }) 
           required={true}
           placeholder="Put description here"
           name="description"
-          value={sketch.description || ''}
+          value={sketch.description}
           onChange={handleChange}
         />
       </div>
@@ -21,7 +22,7 @@ const SketchForm = ({ sketch, handleSubmit, handleChange, handleOptionChange }) 
         <input
           placeholder="Put composer here"
           name="composer"
-          value={sketch.composer || ''}
+          value={sketch.composer || null}
           onChange={handleChange}
         />
       </div>
@@ -42,6 +43,17 @@ const SketchForm = ({ sketch, handleSubmit, handleChange, handleOptionChange }) 
           />
         </label>
         <label className='radio-text'>
+          Alto
+          <input
+            type="radio"
+            name="clef"
+            value="alto"
+            checked={sketch.clef.selectedClefOption === 'alto'}
+            onChange={handleOptionChange}
+            className='clef-radio'
+          />
+        </label>
+        <label className='radio-text'>
           Bass
           <input
             type="radio"
@@ -53,6 +65,8 @@ const SketchForm = ({ sketch, handleSubmit, handleChange, handleOptionChange }) 
           />
         </label>
       </div>
+      <br></br>
+
       <label className='music-element'>Key: </label>
       <input
         placeholder="F | Fm | Eb | C#m"
@@ -60,31 +74,38 @@ const SketchForm = ({ sketch, handleSubmit, handleChange, handleOptionChange }) 
         name="key"
         // pattern="([A-G]{1})"
         // pattern="([A-G]{1}|\'none\')(?:b|#|m)(?:m)"
-        // oninvalid="this.setCustomValidity('Not a valid key signature')"
-        value={sketch.key || ''}
+        // oninvalid ?
+        value={sketch.key || null}
         onChange={handleChange}
       />
       <br></br>
+      <p className='form-notes'>Enter &apos;none&apos; for no key signature.</p>
+
       <label className='music-element'>Meter: </label>
       <input
         placeholder="4/4"
         name="meter"
         minLength={0}
         maxLength={5}
-        // pattern="(?:[1-9]{1,2}|\'none\')\/(?:2|4|8|16)"
-        value={sketch.meter || ''}
+        pattern="(([0-9]{1,2})\/([2\|4\|8\|16]{1,2}))"
+        // The above pattern code controls user input
+        // Currently no allowance for 'none' option
+        value={sketch.meter || null}
         onChange={handleChange}
       />
       <br></br>
-      <p className='form-notes'>Currently supported time signatures: X/2, X/4, X/8, X/16</p>
+      <p className='form-notes'>Currently supported time signatures: X/2, X/4, X/8, X/16,<br />where X is any number 1-99</p>
+
       <label className='music-element'>Tempo: </label>
       <input
         placeholder="1/4=60"
         name="tempo"
-        value={sketch.tempo || ''}
+        value={sketch.tempo || null}
         onChange={handleChange}
       />
       <br></br>
+      <p className='form-notes'>Use format x/x=###</p>
+
       <label className='music-element'>Default Note Length: </label>
       <label className='radio-text'>
         Half Note
@@ -131,16 +152,20 @@ const SketchForm = ({ sketch, handleSubmit, handleChange, handleOptionChange }) 
         />
       </label>
       <br></br>
+
       <p className='music-element'>Music Notes (required): </p>
+      <p className='form-notes'>Use the table provided below to guide your sketch&apos;s notation.</p>
       <textarea
-        className='music-note-input'
         required={true}
+        className='music-note-input'
         placeholder="CCGG | AAG2"
         name="notes"
         value={sketch.notes}
         onChange={handleChange}
       />
-      <p className='form-notes'>Use the table below to guide your sketch&apos;s notation.</p>
+      <SketchPreview
+        sketch={sketch}
+      />
       <br></br>
       <button type="submit">Save my Sketch</button>
     </form>

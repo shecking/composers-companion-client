@@ -6,7 +6,6 @@ import messages from '../components/AutoDismissAlert/messages'
 import axios from 'axios'
 import apiUrl from '../apiConfig'
 
-import SketchPreview from '../shared/SketchPreview'
 import SketchForm from '../shared/SketchForm'
 import SketchTables from '../shared/SketchTable'
 
@@ -111,10 +110,6 @@ class CreateSketch extends Component {
           handleSubmit={this.handleSubmit}
           handleChange={this.handleChange}
           handleOptionChange={this.handleOptionChange}
-        />
-        <br></br>
-        <SketchPreview
-          sketch={sketch}
         />
         <br></br>
         <SketchTables/>
