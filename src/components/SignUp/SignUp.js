@@ -53,6 +53,7 @@ class SignUp extends Component {
       <div className="row">
         <div className="col-sm-10 col-md-8 mx-auto mt-5">
           <h3>Sign Up</h3>
+          <p>Please note that this site is NOT fully secure in its current state. When signing up, you are strongly advised to use a &apos;fake&apos; account and password (e.g. email: abc@abc.com, pwd: abc). I am not responsible for any lost or stolen information as a result of ignoring this security vulnerability.</p>
           <Form onSubmit={this.onSignUp}>
             <Form.Group controlId="email">
               <Form.Label>Email address</Form.Label>
