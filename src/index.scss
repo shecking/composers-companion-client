@@ -1,11 +1,12 @@
 @import '~bootstrap/scss/bootstrap';
 
 $element-background-color: #000;
+$page-background-color: #f3e6ff;
 $element-light-color: #fff;
 $table-solid-color: #ddd;
 $styled-font: 'Shadows Into Light', cursive, Arial, sans-serif;
 $basic-font: 'Nanum Myeongjo', serif;
-$page-background-color: #f3e6ff;
+$danger-color: #f00;
 
 .basic-elements,
 .extended-elements {
@@ -119,6 +120,14 @@ h5 {
 .homepage-text {
   font-family: $basic-font;
   padding-top: 20px;
+}
+
+input {
+
+  :invalid {
+    border: $danger-color solid 2px;
+  }
+
 }
 
 .music-element {
