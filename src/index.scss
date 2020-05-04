@@ -58,6 +58,12 @@ button {
 //   src: url('./fonts/Shadows_Into_Light/ShadowsIntoLight-Regular.ttf');
 // }
 
+.clef-radio,
+.length-radio,
+.radio-text {
+  margin-left: 5px;
+}
+
 .delete-button {
   background-color: #9a0022;
 }
@@ -113,6 +119,10 @@ h5 {
 .homepage-text {
   font-family: $basic-font;
   padding-top: 20px;
+}
+
+.music-element {
+  font-weight: 600;
 }
 
 .music-note-input {

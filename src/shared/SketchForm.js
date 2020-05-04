@@ -5,7 +5,7 @@ const SketchForm = ({ sketch, handleSubmit, handleChange, handleOptionChange }) 
   <div className='full-input-form'>
     <form onSubmit={handleSubmit}>
       <div className='description-form'>
-        <h5>Description: </h5>
+        <h5>Description (required): </h5>
         <input
           required={true}
           placeholder="Put description here"
@@ -29,31 +29,31 @@ const SketchForm = ({ sketch, handleSubmit, handleChange, handleOptionChange }) 
 
       <div className='clef-form'>
         <h5>Music: </h5>
-        <label>Clef: </label>
-        <label>
+        <label className='music-element'>Clef: </label>
+        <label className='radio-text'>
+          Treble
           <input
             type="radio"
             name="clef"
             value="treble"
             checked={sketch.clef.selectedClefOption === 'treble'}
             onChange={handleOptionChange}
-            className='radio clef-radio'
+            className='clef-radio'
           />
-          Treble
         </label>
-        <label>
+        <label className='radio-text'>
+          Bass
           <input
             type="radio"
             name="clef"
             value="bass"
             checked={sketch.clef.selectedClefOption === 'bass'}
             onChange={handleOptionChange}
-            className='radio clef-radio'
+            className='clef-radio'
           />
-          Bass
         </label>
       </div>
-      <label>Key: </label>
+      <label className='music-element'>Key: </label>
       <input
         placeholder="F | Fm | Eb | C#m"
         // id="key"
@@ -65,17 +65,19 @@ const SketchForm = ({ sketch, handleSubmit, handleChange, handleOptionChange }) 
         onChange={handleChange}
       />
       <br></br>
-      <label>Meter: </label>
+      <label className='music-element'>Meter: </label>
       <input
         placeholder="4/4"
         name="meter"
+        minLength={0}
+        maxLength={5}
         // pattern="(?:[1-9]{1,2}|\'none\')\/(?:2|4|8|16)"
         value={sketch.meter || ''}
         onChange={handleChange}
       />
       <br></br>
       <p className='form-notes'>Currently supported time signatures: X/2, X/4, X/8, X/16</p>
-      <label>Tempo: </label>
+      <label className='music-element'>Tempo: </label>
       <input
         placeholder="1/4=60"
         name="tempo"
@@ -83,53 +85,53 @@ const SketchForm = ({ sketch, handleSubmit, handleChange, handleOptionChange }) 
         onChange={handleChange}
       />
       <br></br>
-      <label>Default Note Length: </label>
-      <label>
+      <label className='music-element'>Default Note Length: </label>
+      <label className='radio-text'>
+        Half Note
         <input
           type="radio"
           name="length"
           value="1/2"
           checked={sketch.length.selectedLengthOption === '1/2'}
           onChange={handleOptionChange}
-          className='radio length-radio'
+          className='length-radio'
         />
-        Half Note
       </label>
-      <label>
+      <label className='radio-text'>
+        Quarter Note
         <input
           type="radio"
           name="length"
           value="1/4"
           checked={sketch.length.selectedLengthOption === '1/4'}
           onChange={handleOptionChange}
-          className='radio length-radio'
+          className='length-radio'
         />
-        Quarter Note
       </label>
-      <label>
+      <label className='radio-text'>
+        Eighth Note
         <input
           type="radio"
           name="length"
           value="1/8"
           checked={sketch.length.selectedLengthOption === '1/8'}
           onChange={handleOptionChange}
-          className='radio length-radio'
+          className='length-radio'
         />
-        Eighth Note
       </label>
-      <label>
+      <label className='radio-text'>
+        Sixteenth Note
         <input
           type="radio"
           name="length"
           value="1/16"
           checked={sketch.length.selectedLengthOption === '1/16'}
           onChange={handleOptionChange}
-          className='radio length-radio'
+          className='length-radio'
         />
-        Sixteenth Note
       </label>
       <br></br>
-      <p>Music Notes: </p>
+      <p className='music-element'>Music Notes (required): </p>
       <textarea
         className='music-note-input'
         required={true}
