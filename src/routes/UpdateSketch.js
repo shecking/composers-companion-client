@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { Redirect } from 'react-router-dom'
+import Abcjs from 'react-abcjs'
 import messages from '../components/AutoDismissAlert/messages'
 
 import axios from 'axios'
@@ -118,6 +119,19 @@ class SketchEdit extends Component {
           handleChange={this.handleChange}
           handleOptionChange={this.handleOptionChange}
         />
+        <br></br>
+        <div>
+          <p>Sketch preview:
+            <Abcjs
+              abcNotation={
+                `K:${sketch.key} clef=${sketch.clef.selectedClefOption}\nM:${sketch.meter}\nQ:${sketch.tempo}\nL:${sketch.length.selectedLengthOption}\n${sketch.notes}`
+              }
+              parserParams={{}}
+              engraverParams={{ responsive: 'resize' }}
+              renderParams={{ viewportHorizontal: true }}
+            />
+          </p>
+        </div>
         <br></br>
         <SketchTables/>
       </div>

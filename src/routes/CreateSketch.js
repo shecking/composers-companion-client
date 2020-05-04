@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Redirect } from 'react-router-dom'
 import '../index.scss'
+import Abcjs from 'react-abcjs'
 import messages from '../components/AutoDismissAlert/messages'
 
 import axios from 'axios'
@@ -112,23 +113,23 @@ class CreateSketch extends Component {
           handleOptionChange={this.handleOptionChange}
         />
         <br></br>
+        <div>
+          <p>Sketch preview:
+            <Abcjs
+              abcNotation={
+                `K:${sketch.key} clef=${sketch.clef.selectedClefOption}\nM:${sketch.meter}\nQ:${sketch.tempo}\nL:${sketch.length.selectedLengthOption}\n${sketch.notes}`
+              }
+              parserParams={{}}
+              engraverParams={{ responsive: 'resize' }}
+              renderParams={{ viewportHorizontal: true }}
+            />
+          </p>
+        </div>
+        <br></br>
         <SketchTables/>
       </div>
     )
   }
 }
-// The code below represents proof of concept (using 'name') for rendering user input immediately
-// This will be used to render a user's notation immediately when creating a new sketch
-// <div>
-//   <p>Updated name: {this.state.name} </p>
-//   <p>Change name:</p>
-//   <input
-//     type="text"
-//     onChange={event => {
-//       this.setState({
-//         name: event.target.value
-//       })
-//     }}/>
-// </div>
 
 export default CreateSketch
