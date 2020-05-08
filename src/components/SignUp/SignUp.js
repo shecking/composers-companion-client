@@ -62,7 +62,8 @@ class SignUp extends Component {
                 type="email"
                 name="email"
                 value={email}
-                placeholder="Enter email"
+                placeholder="example@example.com"
+                pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
                 onChange={this.handleChange}
               />
             </Form.Group>
