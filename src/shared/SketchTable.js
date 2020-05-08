@@ -15,6 +15,7 @@ class SketchTables extends Component {
         { example: 'Flats (_)', input: '_B | __B', output: 'Bb | Bbb' },
         { example: 'Sharps (^)', input: '^B | ^^B', output: 'C# | Cx' },
         { example: 'Naturals (=)', input: '=B', output: '(B natural)' },
+        { example: 'Note Duration', input: 'C | C2 | C3 | C4', output: 'quarter | half | dotted half | whole (default = quarter)' },
         { example: 'Rests (z)', input: 'z | z2 ', output: 'full measure rest | 2 note lengths of rest' }
       ],
       extended_elements: [

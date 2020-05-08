@@ -72,8 +72,11 @@ const SketchForm = ({ sketch, handleSubmit, handleChange, handleOptionChange }) 
         placeholder="F | Fm | Eb | C#m"
         // id="key"
         name="key"
-        // pattern="([A-G]{1})"
-        // pattern="([A-G]{1}|\'none\')(?:b|#|m)(?:m)"
+        minLength={0}
+        maxLength={4}
+        pattern="[A-G]|[A-G][m]|[A-G][b#]|[A-G][b#][m]|none"
+        title='That is not a valid key signature.'
+        // pattern="([A-G]{1})|([A-G][m]{2})|([A-G][b#]{2}|([A-G][b#][m]{3})|(none)"
         // oninvalid ?
         value={sketch.key || null}
         onChange={handleChange}
@@ -87,14 +90,15 @@ const SketchForm = ({ sketch, handleSubmit, handleChange, handleOptionChange }) 
         name="meter"
         minLength={0}
         maxLength={5}
-        pattern="(([0-9]{1,2})\/([2\|4\|8\|16]{1,2}))"
+        pattern="[0-9]{1,2}\/([2]|[4]|[8]|[1][6]|[3][2])|none"
+        title='That is not a valid time signature.'
         // The above pattern code controls user input
-        // Currently no allowance for 'none' option
+        // Current bug: the above still accepts '3' and '6' as beat value, since 3 and 6 are numbers within 16 and 32
         value={sketch.meter || null}
         onChange={handleChange}
       />
       <br></br>
-      <p className='form-notes'>Currently supported time signatures: X/2, X/4, X/8, X/16,<br />where X is any number 1-99</p>
+      <p className='form-notes'>Enter &apos;none&apos; for no time signature.<br />Currently supported time signatures:<br />X/2, X/4, X/8, X/16, X/32<br />where X is any number 1-99</p>
 
       <label className='music-element'>Tempo: </label>
       <input
@@ -141,12 +145,23 @@ const SketchForm = ({ sketch, handleSubmit, handleChange, handleOptionChange }) 
         />
       </label>
       <label className='radio-text'>
-        Sixteenth Note
+        16th Note
         <input
           type="radio"
           name="length"
           value="1/16"
           checked={sketch.length.selectedLengthOption === '1/16'}
+          onChange={handleOptionChange}
+          className='length-radio'
+        />
+      </label>
+      <label className='radio-text'>
+        32nd Note
+        <input
+          type="radio"
+          name="length"
+          value="1/32"
+          checked={sketch.length.selectedLengthOption === '1/32'}
           onChange={handleOptionChange}
           className='length-radio'
         />
@@ -160,6 +175,7 @@ const SketchForm = ({ sketch, handleSubmit, handleChange, handleOptionChange }) 
         className='music-note-input'
         placeholder="CCGG | AAG2"
         name="notes"
+        // title='Please enter at least one note.'
         value={sketch.notes}
         onChange={handleChange}
       />
