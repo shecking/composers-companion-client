@@ -5,18 +5,14 @@ class SketchTables extends Component {
     super(props)
     this.state = {
       basic_elements: [
-        { example: 'Key', input: 'F | Fm', output: 'F Major (1 flat) | F minor (4 flats)' },
-        { example: 'Key (flats/sharps)', input: 'Eb | C#m', output: 'Eb Major (3 flats) | C# minor (3 sharps)' },
-        { example: 'No Key', input: '(none)', output: 'no key signature' },
-        { example: 'Meter', input: '3/4', output: '3/4 time' },
-        { example: 'Complex Meter', input: '2+3/8', output: '2+3/8 time' },
-        { example: 'No Meter', input: '(none)', output: 'no time signature' },
+        { example: 'element', input: 'F | Fm | Eb | C#m | none', output: 'F Maj | F min | Eb Maj | C# min | no key signature' },
+        { example: 'Meter', input: '3/4 | 2+3/8 | none', output: '3/4 time | 2+3/8 time | no time signature' },
         { example: 'Pitch Level', input: 'C,, | C, | C | c | c\' | c\'\'', output: 'C2 | C3 | C4 (middle C) | C5 | C6 | C7' },
         { example: 'Flats (_)', input: '_B | __B', output: 'Bb | Bbb' },
         { example: 'Sharps (^)', input: '^B | ^^B', output: 'C# | Cx' },
-        { example: 'Naturals (=)', input: '=B', output: '(B natural)' },
-        { example: 'Note Duration', input: 'C | C2 | C3 | C4', output: 'quarter | half | dotted half | whole (default = quarter)' },
-        { example: 'Rests (z)', input: 'z | z2 ', output: 'full measure rest | 2 note lengths of rest' }
+        { example: 'Naturals (=)', input: '=B', output: 'B natural' },
+        { example: 'Note Duration', input: 'C | C2 | C3 | C4', output: 'quarter | half | dotted half | whole (when default = quarter)' },
+        { example: 'Rests (z)', input: 'z2 | z4 ', output: '2 | 4 note lengths of rest' }
       ],
       extended_elements: [
         { example: 'Bar Lines (|)', input: '|', output: 'bar line' },

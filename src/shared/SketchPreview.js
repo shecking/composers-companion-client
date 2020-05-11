@@ -2,7 +2,7 @@ import React from 'react'
 import Abcjs from 'react-abcjs'
 
 const SketchPreview = ({ sketch }) => (
-  <div className = 'sketch-preview'>
+  <div className='sketch-preview'>
     <p>Sketch preview:
       <Abcjs
         abcNotation={
