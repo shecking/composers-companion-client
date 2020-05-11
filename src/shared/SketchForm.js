@@ -16,7 +16,6 @@ const SketchForm = ({ sketch, handleSubmit, handleChange, handleOptionChange }) 
         />
       </div>
       <br></br>
-
       <div className='composer-form'>
         <h5>Composer: </h5>
         <input
