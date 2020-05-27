@@ -5,7 +5,7 @@ class SketchTables extends Component {
     super(props)
     this.state = {
       basic_elements: [
-        { example: 'element', input: 'F | Fm | Eb | C#m | none', output: 'F Maj | F min | Eb Maj | C# min | no key signature' },
+        { example: 'Key', input: 'F | Fm | Eb | C#m | none', output: 'F Maj | F min | Eb Maj | C# min | no key signature' },
         { example: 'Meter', input: '3/4 | 2+3/8 | none', output: '3/4 time | 2+3/8 time | no time signature' },
         { example: 'Pitch Level', input: 'C,, | C, | C | c | c\' | c\'\'', output: 'C2 | C3 | C4 (middle C) | C5 | C6 | C7' },
         { example: 'Flats (_)', input: '_B | __B', output: 'Bb | Bbb' },
